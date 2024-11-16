@@ -1,26 +1,23 @@
-import React from "react";
-import Hero from "./components/Hero/Hero";
-import Navbar from "./components/Navbar/Navbar";
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-// import Banner from "./components/Banner/Banner.jsx";
-import AppStore from "./components/AppStore/AppStore.jsx";
-// import CoverBanner from "./components/CoverBanner/CoverBanner.jsx";
-// import Testimonial from "./components/Testimonial/Testimonial.jsx";
-import Footer from "./components/Footer/Footer.jsx";
+import React, { useEffect } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-import Region from './components/Searches/Region.jsx';  // Region Page Component
-
-import Cuisine from './components/Searches/Cuisine.jsx';  // Cuisine Page Component
-import Ingredients from './components/Searches/Ingredients.jsx';  // Ingredient Page Component
-import Flavours from "./components/Flavours/Flavours.jsx";
-import Subregion from "./components/Searches/Subregion.jsx";
-import Continent from "./components/Searches/Continent.jsx";
-import Recipeofday from "./components/recipeOfTheDay/Recipeofday.jsx";
+// Components
+import Hero from "./components/Hero/Hero";
+import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
+import Region from "./components/Searches/Region";
+import Continent from "./components/Searches/Continent";
+import Cuisine from "./components/Searches/Cuisine";
+import Ingredients from "./components/Searches/Ingredients";
+import Subregion from "./components/Searches/Subregion";
+import Recipeofday from "./components/recipeOfTheDay/Recipeofday";
+import Moleculeofday from "./components/Fcomponents/Moleculeofday";
+import MoleculeByName from "./components/Fcomponents/Molecule_byname";
 
 const App = () => {
-  React.useEffect(() => {
+  useEffect(() => {
     AOS.init({
       offset: 100,
       duration: 500,
@@ -31,33 +28,21 @@ const App = () => {
   }, []);
 
   return (
-    // <div className="bg-white dark:bg-gray-900 dark:text-white duration-200">
-    //   <Navbar />
-    //   <Hero />
-    //   <Services />
-    //   {/* <Banner /> */}
-    //   {/* <CoverBanner /> */}
-    //   <AppStore />
-    //   {/* <Testimonial /> */}
-    //   <Footer />
-    // </div>
     <Router>
-    <Navbar />
-    <Routes>
-      <Route path="/" element={<Hero/>} />
-      <Route path="/region" element={<Region/>} />
-      <Route path="/continent" element={<Continent/>} />
-      <Route path="/cuisine" element={<Cuisine/>} />
-      <Route path="/ingredient" element={<Ingredients/>} />
-      <Route path="/flavours" element={<Flavours/>} />
-      <Route path="/region" element={<Region/>} />
-      <Route path="/subregion" element={<Subregion/>} />
-      <Route path="/recipe-of-the-day" element={<Recipeofday/>} />
-    </Routes>
-    
-    <Footer/>
-  </Router>
-
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Hero />} />
+        <Route path="/region" element={<Region />} />
+        <Route path="/continent" element={<Continent />} />
+        <Route path="/cuisine" element={<Cuisine />} />
+        <Route path="/ingredient" element={<Ingredients />} />
+        <Route path="/subregion" element={<Subregion />} />
+        <Route path="/recipe-of-the-day" element={<Recipeofday />} />
+        <Route path="/molecule-by-name" element={<MoleculeByName />} />
+        <Route path="/molecule-of-the-day" element={<Moleculeofday />} />
+      </Routes>
+      <Footer />
+    </Router>
   );
 };
 

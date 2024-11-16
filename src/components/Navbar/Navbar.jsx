@@ -108,22 +108,22 @@ const Navbar = () => {
                   </div>
                 )}
               </li>
-              <li>
+              {/* <li>
                 <Link
                   to="/flavours"
                   className="block px-4 py-2 hover:text-yellow-500 dark:hover:text-gray-300 duration-200"
                 >
                   Flavours
                 </Link>
-              </li>
+              </li> */}
               <li>
   {/* Recipe of the Day Button */}
-  <Link
+  {/* <Link
     to="/recipe-of-the-day"
     className="bg-green-500 hover:bg-green-600 text-white py-1 px-6 rounded-full duration-200 inline-block"
   >
     Recipe of the Day
-  </Link>
+  </Link> */}
 </li>
 
             </ul>
